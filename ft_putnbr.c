@@ -1,4 +1,4 @@
-#include "printf_header.h"
+#include "ft_printf.h"
 
 void	ft_putnbr_rtn(unsigned int nbpos, int *counter)
 {
@@ -11,7 +11,7 @@ void	ft_putnbr_rtn(unsigned int nbpos, int *counter)
 	ft_putnbr_rtn(nbpos / 10, counter);
 	p = nbpos % 10 + '0';
 	write(1, &p, 1);
-	counter += 1;
+	*counter += 1;
 }
 
 void	ft_putnbr(int nb, int *counter)
@@ -21,13 +21,13 @@ void	ft_putnbr(int nb, int *counter)
 	if (nb == 0)
 	{
 		write(1, "0", 1);
-		counter += 1;
+		*counter += 1;
 		return ;
 	}
 	if (nb < 0)
 	{
 		write(1, "-", 1);
-		counter += 1;
+		*counter += 1;
 		nbpos = -nb;
 	}
 	else

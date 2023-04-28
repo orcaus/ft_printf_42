@@ -1,5 +1,5 @@
-#ifndef PRINTF_HEADER_H
-# define PRINTF_HEADER_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
 # include <stddef.h>

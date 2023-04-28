@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_header.h"
+#include "ft_printf.h"
 
 void ft_putstr(char *str, int *counter)
 {
@@ -19,6 +19,5 @@ void ft_putstr(char *str, int *counter)
 	{
 		ft_putchar(str[i], counter);
 		i++;
-		counter += 1;
 	}
 }

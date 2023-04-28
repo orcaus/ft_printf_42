@@ -1,4 +1,4 @@
-#include "printf_header.h"
+#include "ft_printf.h"
 
 void ft_char_adre(unsigned int modulo, int *counter)
 {
@@ -14,7 +14,7 @@ void ft_char_adre(unsigned int modulo, int *counter)
             write(1, "e", 1);
         else if (modulo == 15)
             write(1, "f", 1);
-        counter += 1;
+        *counter += 1;
 }
 
 void ft_hexa_adre(unsigned int num, int *counter)
@@ -25,7 +25,7 @@ void ft_hexa_adre(unsigned int num, int *counter)
     while (num != 0)
     {
         modulo = num % 16;
-        num += num / 16;
+        num = num / 16;
         if (modulo >= 0 && modulo <= 9)
             ft_putnbr(modulo, counter);
         if (modulo >= 10 && modulo <= 15)
@@ -36,7 +36,7 @@ void ft_hexa_adre(unsigned int num, int *counter)
 void ft_adre(void *a, int *counter)
 {
     write(1, "0x", 2);
-    counter += 2;
+    *counter += 2;
 
     ft_hexa_adre((unsigned long int) a, counter);
 }
