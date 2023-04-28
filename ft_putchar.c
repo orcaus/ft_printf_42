@@ -10,7 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putchar(char c)
+#include "printf_header.h"
+
+void ft_putchar(int c, int *counter)
 {
 	write (1, &c, 1);
+	counter += 1;
 }

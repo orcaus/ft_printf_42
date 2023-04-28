@@ -10,45 +10,47 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf_header.h"
 
-void ft_sort(const char*str, int i, va_list type)
+void ft_sort(const char *str, int i, va_list type, int	*counter)
 {
-	if (str[i] == c)
-		
-	else if (str[i] == s)
-		ft_putchar(va_arg(list, char));
-	else if (str[i] == p)
-		ft_putstr(va_arg(list, char *));
-	else if (str[i] == d)
-		ft_putnbr(va_arg(list, int));
-	else if (str[i] == i)
-		ft_putnbr(va_arg(list, int));
-	else if (str[i] == u)
-		ft_putnbr(va_arg(list, unsigned int));
-	else if (str[i] == x)
-		
-	else if (str[i] == X)
-		
-	else if (str[i] == %)
-			write(1, %, 1);
+	if (str[i] == 'c')
+		ft_putchar(va_arg(type, int), counter);
+	else if (str[i] == 's')
+		ft_putstr(va_arg(type, char *), counter);
+	else if (str[i] == 'p')
+		ft_adre(va_arg(type, void *), counter);
+	else if (str[i] == 'd')
+		ft_putnbr(va_arg(type, int), counter);
+	else if (str[i] == 'i')
+		ft_putnbr(va_arg(type, int), counter);
+	else if (str[i] == 'u')
+		ft_putnbr(va_arg(type, unsigned int), counter);
+	else if (str[i] == 'x')
+		ft_hexa_maj(va_arg(type, unsigned int), counter);
+	else if (str[i] == 'X')
+		ft_hexa_maj(va_arg(type, unsigned int), counter);
+	else if (str[i] == '%')
+		ft_putchar(va_arg(type, int), counter);
 }
 
 int ft_printf(const char *str, ...)
 {
 	int i;
+	int	counter;
 	va_list type;
 	
 	i = 0;
+	counter = 0;
 	if (str == NULL)
-		return (NULL)
+		return (0);
 	va_start (type, str);
 	while (str[i])
 	{
-		if (str[i] == %)
-			ft_sort (str, i, type);
+		if (str[i] == '%')
+			ft_sort (str, i, type, &counter);
 		i++;
 	}
 	va_end (type);
-	return (i);
+	return (counter);
 }

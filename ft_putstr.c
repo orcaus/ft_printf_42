@@ -10,12 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putstr(char *str)
+#include "printf_header.h"
+
+void ft_putstr(char *str, int *counter)
 {
 	int i;
 	while (str[i])
 	{
-		ft_putchar(str[i])
+		ft_putchar(str[i], counter);
 		i++;
+		counter += 1;
 	}
 }
