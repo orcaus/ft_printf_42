@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void ft_sort(const char *str, int i, va_list type, int *counter)
+void	ft_sort(const char *str, int i, va_list type, int *counter)
 {
 	if (str[i] == 'c')
 		ft_putchar(va_arg(type, int), counter);
@@ -33,16 +33,16 @@ void ft_sort(const char *str, int i, va_list type, int *counter)
 	else if (str[i] == '%')
 	{
 		write(1, "%", 1);
-		*counter += 1;	
+		*counter += 1;
 	}	
 }
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	int i;
-	int	counter;
-	va_list type;
-	
+	int		i;
+	int		counter;
+	va_list	type;
+
 	i = 0;
 	counter = 0;
 	if (str == NULL)

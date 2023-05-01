@@ -12,10 +12,10 @@
 
 #include "ft_printf.h"
 
-void ft_putstr(char *str, int *counter)
+void	ft_putstr(char *str, int *counter)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	if (str == NULL)
 	{

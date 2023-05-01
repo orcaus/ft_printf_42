@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_hexa_maj.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: srajaoui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/01 18:05:33 by srajaoui          #+#    #+#             */
+/*   Updated: 2023/05/01 18:05:34 by srajaoui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void ft_hexa_maj(unsigned int num, int *counter)
+void	ft_hexa_maj(unsigned int num, int *counter)
 {
-	int modulo;
-	char buff[25];
-	int a;
-	
+	int		modulo;
+	char	buff[25];
+	int		a;
+
 	a = 0;
 	if (num == 0)
 	{
