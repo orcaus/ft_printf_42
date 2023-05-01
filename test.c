@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srajaoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/27 11:35:46 by srajaoui          #+#    #+#             */
-/*   Updated: 2023/04/27 11:35:48 by srajaoui         ###   ########.fr       */
+/*   Created: 2023/05/01 17:14:00 by srajaoui          #+#    #+#             */
+/*   Updated: 2023/05/01 17:21:03 by srajaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdio.h>
 
-void ft_putstr(char *str, int *counter)
+int main()
 {
 	int i;
 	
-	i = 0;
-	if (str == NULL)
-	{
-		write(1, "(null)", 6);
-		*counter += 6;
-	}
-	while (str != NULL && str[i])
-	{
-		write(1, &str[i++], 1);
-		*counter += 1;
-	}
+	i = -2;
+	printf("%u", i);
 }

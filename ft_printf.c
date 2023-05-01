@@ -25,13 +25,16 @@ void ft_sort(const char *str, int i, va_list type, int *counter)
 	else if (str[i] == 'i')
 		ft_putnbr(va_arg(type, int), counter);
 	else if (str[i] == 'u')
-		ft_putnbr(va_arg(type, unsigned int), counter);
+		ft_putnbr_u(va_arg(type, unsigned int), counter);
 	else if (str[i] == 'x')
 		ft_hexa_min(va_arg(type, unsigned int), counter);
 	else if (str[i] == 'X')
 		ft_hexa_maj(va_arg(type, unsigned int), counter);
 	else if (str[i] == '%')
-		ft_putchar(va_arg(type, int), counter);
+	{
+		write(1, "%", 1);
+		*counter += 1;	
+	}	
 }
 
 int ft_printf(const char *str, ...)
@@ -59,13 +62,3 @@ int ft_printf(const char *str, ...)
 	va_end (type);
 	return (counter);
 }
-/*
-int main()
-{
-	unsigned int num;
-	const char *str = " %x ";
-	
-	num = 0;
-	ft_printf(str, num);
-	
-}*/
